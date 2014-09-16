@@ -11,9 +11,9 @@ module.exports = {
     },
     min: {
         files: {
-            'demo/css/app.min.css': [           
+            'demo/css/app.min.css': [
                 'src/css/bootstrap.css',
-                'src/css/*.css',
+                'src/css/*.css'
             ]
         },
         options: {

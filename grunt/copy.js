@@ -14,8 +14,10 @@ module.exports = {
             {src: "bower_components/moment/min/moment.min.js", dest: "src/js/libs/moment.min.js"},
             {src: "bower_components/screenfull/dist/screenfull.min.js", dest: "src/js/libs/screenfull.min.js"},
 
-            // Copy over our fake API requests
-            {src: 'api/**', dest: './', cwd: 'src/api/', expand: true}
+            // fontawesome
+            {src: "bower_components/font-awesome/css/font-awesome.min.css", dest: "src/css/font-awesome.min.css"},
+            {src: "**", dest: "src/fonts", cwd: 'bower_components/font-awesome/fonts', expand : true}
+
         ]
     },
     demo: {

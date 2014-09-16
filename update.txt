@@ -6,11 +6,12 @@
   - Can compile application less files with grunt. Use the command `grunt:less`
   - Added grunt for versioning and changelogs.
 
-  - Update Fullcalendar to 2.1.1, "js/jquery/fullcalenar/"
-
   - Added dashboard v2 page
   - Added Note app
   - Added Contacts app
+
+  - Update Fullcalendar to 2.1.1, "js/jquery/fullcalenar/"
+  - Update FontAwesome to 4.2
 
 #### Bugfixes:
 

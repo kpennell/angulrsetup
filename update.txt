@@ -8,6 +8,10 @@
 
   - Update Fullcalendar to 2.1.1, "js/jquery/fullcalenar/"
 
+  - Added dashboard v2 page
+  - Added Note app
+  - Added Contacts app
+
 #### Bugfixes:
 
   - Fix sparkline on retina display, "js/jquery/charts/sparkline/jquery.sparkline.min.js"

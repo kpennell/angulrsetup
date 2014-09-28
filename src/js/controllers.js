@@ -13,7 +13,7 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
       // config
       $scope.app = {
         name: 'Angulr',
-        version: '1.3.0',
+        version: '1.3.1',
         // for chart colors
         color: {
           primary: '#7266ba',
@@ -424,6 +424,10 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
       { label: "iPad Air", data: 18 }
     ];
 
+    $scope.refreshData = function(){
+      $scope.d0_1 = $scope.d0_2;
+    };
+
     $scope.getRandomData = function() {
       var data = [],
       totalPoints = 150;
@@ -504,7 +508,7 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
         if ( !response.data.user ) {
           $scope.authError = 'Email or Password not right';
         }else{
-          $state.go('app.dashboard');
+          $state.go('app.dashboard-v1');
         }
       }, function(x) {
         $scope.authError = 'Server Error';
@@ -524,11 +528,21 @@ angular.module('app.controllers', ['pascalprecht.translate', 'ngCookies'])
         if ( !response.data.user ) {
           $scope.authError = response;
         }else{
-          $state.go('app.dashboard');
+          $state.go('app.dashboard-v1');
         }
       }, function(x) {
         $scope.authError = 'Server Error';
       });
     };
+  }])
+  // tab controller
+  .controller('CustomTabController', ['$scope', function($scope) {
+    $scope.tabs = [true, false, false];
+    $scope.tab = function(index){
+      angular.forEach($scope.tabs, function(i, v) {
+        $scope.tabs[v] = false;
+      });
+      $scope.tabs[index] = true;
+    }
   }])
  ;

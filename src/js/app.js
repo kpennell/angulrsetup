@@ -5,6 +5,7 @@
 var app = angular.module('app', [
     'ngAnimate',
     'ngCookies',
+    'ngResource',
     'ngStorage',
     'ui.router',
     'ui.bootstrap',
@@ -91,6 +92,23 @@ var app = angular.module('app', [
                 url: '/timeline',
                 templateUrl: 'tpl/ui_timeline.html'
             })
+            .state('app.ui.tree', {
+                url: '/tree',
+                templateUrl: 'tpl/ui_tree.html',
+                resolve: {
+                    deps: ['$ocLazyLoad',
+                      function( $ocLazyLoad ){
+                        return $ocLazyLoad.load(
+                            {
+                                name: 'angularBootstrapNavTree',
+                                files: ['js/modules/abn_tree/abn_tree_directive.js',
+                                        'js/modules/abn_tree/ctrl.js',
+                                        'js/modules/abn_tree/abn_tree.css'] 
+                            }
+                        );
+                    }]
+                }
+            })
             .state('app.ui.toaster', {
                 url: '/toaster',
                 templateUrl: 'tpl/ui_toaster.html',
@@ -172,6 +190,39 @@ var app = angular.module('app', [
             .state('app.form.wizard', {
                 url: '/wizard',
                 templateUrl: 'tpl/form_wizard.html'
+            })
+            .state('app.form.fileupload', {
+                url: '/fileupload',
+                templateUrl: 'tpl/form_fileupload.html',
+                resolve: {
+                    deps: ['$ocLazyLoad',
+                      function( $ocLazyLoad ){
+                        return $ocLazyLoad.load(
+                            {
+                                name: 'angularFileUpload',
+                                files: ['js/modules/angular-file-upload/angular-file-upload.js',
+                                        'js/modules/angular-file-upload/ctrl.js' ]
+                            }
+                        );
+                    }]
+                }
+            })
+            .state('app.form.imagecrop', {
+                url: '/imagecrop',
+                templateUrl: 'tpl/form_imagecrop.html',
+                resolve: {
+                    deps: ['$ocLazyLoad',
+                      function( $ocLazyLoad ){
+                        return $ocLazyLoad.load(
+                            {
+                                name: 'ngImgCrop',
+                                files: ['js/modules/ngImgCrop/ng-img-crop.css',
+                                        'js/modules/ngImgCrop/ng-img-crop.js',
+                                        'js/modules/ngImgCrop/ctrl.js' ]
+                            }
+                        );
+                    }]
+                }
             })
             // pages
             .state('app.page', {
@@ -339,6 +390,24 @@ var app = angular.module('app', [
                     }]
                 }
             })
+            .state('app.weather', {
+                url: '/weather',
+                templateUrl: 'tpl/apps_weather.html',
+                resolve: {
+                    deps: ['$ocLazyLoad',
+                      function( $ocLazyLoad ){
+                        return $ocLazyLoad.load(
+                            {
+                                name: 'angular-skycons',
+                                files: ['js/app/weather/skycons.js',
+                                        'js/libs/moment.min.js', 
+                                        'js/app/weather/angular-skycons.js',
+                                        'js/app/weather/ctrl.js' ] 
+                            }
+                        );
+                    }]
+                }
+            })
     }
   ]
 )
@@ -351,7 +420,7 @@ var app = angular.module('app', [
   // Those urls are [prefix][langKey][suffix].
   $translateProvider.useStaticFilesLoader({
     prefix: 'l10n/',
-    suffix: '.json'
+    suffix: '.js'
   });
 
   // Tell the module what language to use by default

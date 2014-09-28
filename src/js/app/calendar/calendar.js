@@ -31,9 +31,19 @@ app.controller('FullcalendarCtrl', ['$scope', function($scope) {
       {title:'Feed cat', start: new Date(y, m+1, 6, 18, 0), className: ['b-l b-2x b-info']}
     ];
 
-    /* alert on eventClick */
-    $scope.alertOnEventClick = function( event, jsEvent, view ){
-       
+    /* alert on dayClick */
+    $scope.precision = 400;
+    $scope.lastClickTime = 0;
+    $scope.alertOnEventClick = function( date, jsEvent, view ){
+      var time = new Date().getTime();
+      if(time - $scope.lastClickTime <= $scope.precision){
+          $scope.events.push({
+            title: 'New Event',
+            start: date,
+            className: ['b-l b-2x b-info']
+          });
+      }
+      $scope.lastClickTime = time;
     };
     /* alert on Drop */
     $scope.alertOnDrop = function(event, delta, revertFunc, jsEvent, ui, view){
@@ -72,7 +82,7 @@ app.controller('FullcalendarCtrl', ['$scope', function($scope) {
           center: 'title',
           right: 'next'
         },
-        eventClick: $scope.alertOnEventClick,
+        dayClick: $scope.alertOnEventClick,
         eventDrop: $scope.alertOnDrop,
         eventResize: $scope.alertOnResize,
         eventMouseover: $scope.alertOnMouseOver

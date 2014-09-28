@@ -175,21 +175,28 @@ angular.module('app.directives', ['ui.load'])
       }
     };
   }])
-  .directive('uiFullscreen', ['uiLoad', function(uiLoad) {
+  .directive('uiFullscreen', ['uiLoad', '$document', '$window', function(uiLoad, $document, $window) {
     return {
       restrict: 'AC',
       template:'<i class="fa fa-expand fa-fw text"></i><i class="fa fa-compress fa-fw text-active"></i>',
       link: function(scope, el, attr) {
         el.addClass('hide');
         uiLoad.load('js/libs/screenfull.min.js').then(function(){
-          if (screenfull.enabled) {
+          // disable on ie11
+          if (screenfull.enabled && !navigator.userAgent.match(/Trident.*rv:11\./)) {
             el.removeClass('hide');
           }
           el.on('click', function(){
             var target;
             attr.target && ( target = $(attr.target)[0] );            
-            el.toggleClass('active');
             screenfull.toggle(target);
+          });
+          $document.on(screenfull.raw.fullscreenchange, function () {
+            if(screenfull.isFullscreen){
+              el.addClass('active');
+            }else{
+              el.removeClass('active');
+            }
           });
         });
       }
@@ -229,9 +236,9 @@ angular.module('app.directives', ['ui.load'])
       link: function(scope, element, attrs) {
         var model = $parse(attrs.uiFocus);
         scope.$watch(model, function(value) {
-          if(value === true) { 
+          if(value === true) {
             $timeout(function() {
-              element[0].focus(); 
+              element[0].focus();
             });
           }
         });

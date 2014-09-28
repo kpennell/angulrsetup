@@ -18,7 +18,7 @@ app.controller('NoteCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.selectNote(note);
   }
 
-  $scope.deleteNote = function(note){    
+  $scope.deleteNote = function(note){
     $scope.notes.splice($scope.notes.indexOf(note), 1);
     if(note.selected){
       $scope.note = $scope.notes[0];
@@ -26,7 +26,7 @@ app.controller('NoteCtrl', ['$scope', '$http', function($scope, $http) {
     }
   }
 
-  $scope.selectNote = function(note){    
+  $scope.selectNote = function(note){
     angular.forEach($scope.notes, function(note) {
       note.selected = false;
     });

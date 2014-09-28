@@ -668,6 +668,18 @@ body {
   min-height: 100%;
 }
 
+.app:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+  width: inherit;
+  background-color: #f0f3f4;
+  border: inherit;
+  content: "";
+}
+
 .app-header-fixed {
   padding-top: 50px;
 }
@@ -874,6 +886,7 @@ body {
   .navbar-header {
     width: 200px;
   }
+  .navbar-collapse,
   .app-content,
   .app-footer {
     margin-left: 200px;
@@ -910,6 +923,7 @@ body {
   .app-aside-folded .navbar-header {
     width: 60px;
   }
+  .app-aside-folded .navbar-collapse,
   .app-aside-folded .app-content,
   .app-aside-folded .app-footer {
     margin-left: 60px;
@@ -920,9 +934,6 @@ body {
   }
   .app-aside-fixed .app-header .navbar-header {
     position: fixed;
-  }
-  .app-aside-fixed .app-header .navbar-collapse {
-    padding-left: 200px;
   }
   .app-aside-fixed .aside-wrap {
     position: fixed;
@@ -950,9 +961,6 @@ body {
   .smart .app-aside-fixed .aside-wrap .navi-wrap {
     width: 200px;
   }
-  .app-aside-fixed.app-aside-folded .app-header .navbar-collapse {
-    padding-left: 60px;
-  }
   .app-aside-fixed.app-aside-folded .app-aside {
     position: fixed;
     top: 0;
@@ -972,11 +980,17 @@ body {
     position: absolute;
     top: 0;
     bottom: 0;
-    z-index: -2;
+    z-index: -1;
     width: inherit;
     background-color: inherit;
     border: inherit;
     content: "";
+  }
+  .bg-auto.b-l:before {
+    margin-left: -1px;
+  }
+  .bg-auto.b-r:before {
+    margin-right: -1px;
   }
   .col.show {
     display: table-cell !important;
@@ -1037,6 +1051,12 @@ body {
   .navbar-form .form-group {
     margin-bottom: 0;
   }
+}
+
+html {
+  background: url('../img/bg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .app.container {
@@ -2490,8 +2510,8 @@ fieldset[disabled] .i-checks input + i:before {
 
 .i-checks > i:before {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 50%;
+  left: 50%;
   width: 0;
   height: 0;
   background-color: transparent;
@@ -2506,6 +2526,32 @@ fieldset[disabled] .i-checks input + i:before {
 
 .i-checks > span .active {
   display: none;
+}
+
+.i-checks-sm input:checked + i:before {
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+}
+
+.i-checks-sm > i {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  margin-left: -18px;
+}
+
+.i-checks-lg input:checked + i:before {
+  top: 8px;
+  left: 8px;
+  width: 12px;
+  height: 12px;
+}
+
+.i-checks-lg > i {
+  width: 30px;
+  height: 30px;
 }
 
 .datepicker {
@@ -3779,7 +3825,7 @@ a.text-#000000:hover {
 }
 
 .pos-stc {
-  position: static;
+  position: static !important;
 }
 
 .pos-abt {

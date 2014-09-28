@@ -7,10 +7,10 @@
     <div class="bg-black dker wrapper-lg" ng-controller="FlotChartDemoCtrl">
         <ul class="nav nav-pills nav-xxs nav-rounded m-b-lg">
           <li class="active"><a href>Day</a></li>
-          <li><a href>Week</a></li>
-          <li><a href>Month</a></li>
+          <li><a href ng-click="refreshData()">Week</a></li>
+          <li><a href ng-click="refreshData()">Month</a></li>
         </ul>
-        <div ui-jq="plot" ui-options="
+        <div ui-jq="plot" ui-refresh="d0_1" ui-options="
         [
           { data: {{d0_1}}, points: { show: true, radius: 2}, splines: { show: true, tension: 0.4, lineWidth: 1 } }
         ],

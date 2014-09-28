@@ -12,6 +12,17 @@ body{
 	min-height: 100%;
 	width: 100%;
 	position: relative;
+	&:before{
+		content: "";
+		position: absolute;
+		width: inherit;
+		top: 0;
+		bottom: 0;
+		z-index: -1;
+		background-color: @body-bg;
+		border: inherit;
+		display: block;
+	}
 }
 
 .app-header-fixed{
@@ -195,6 +206,7 @@ body{
 	.navbar-header {
 		width: @app-aside-width;
 	}
+	.navbar-collapse,
 	.app-content,
 	.app-footer{
 		margin-left: @app-aside-width;
@@ -234,6 +246,7 @@ body{
 		.navbar-header {
 			width: @app-aside-folded-width;
 		}
+		.navbar-collapse,
 		.app-content,
 		.app-footer{
 			margin-left: @app-aside-folded-width;
@@ -251,10 +264,7 @@ body{
 		.app-header{
 			.navbar-header{
 				position: fixed;
-			}
-			.navbar-collapse{
-				padding-left: @app-aside-width;
-			}
+			}			
 		}
 		.aside-wrap{
 			position: fixed;
@@ -283,11 +293,6 @@ body{
 			}
 		}
 		&.app-aside-folded{
-			.app-header{
-				.navbar-collapse{
-					padding-left: @app-aside-folded-width;
-				}
-			}
 			.app-aside{
 				position: fixed;
 				top: 0;
@@ -313,9 +318,15 @@ body{
 			width: inherit;
 			top: 0;
 			bottom: 0;
-			z-index: -2;
+			z-index: -1;
 			background-color: inherit;
-			border: inherit;
+			border: inherit;			
+		}
+		&.b-l:before{
+			margin-left: -1px;
+		}
+		&.b-r:before{
+			margin-right: -1px;
 		}
 	}
 

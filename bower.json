@@ -52,6 +52,10 @@
     "angular-bootstrap": "~0.11.0",
     "angular-ui-utils": "~0.1.1",
     "moment": "~2.8.3",
-    "screenfull": "~1.2.1"
+    "screenfull": "~1.2.1",
+    "angular-resource": "~1.2.25",
+    "angular-bootstrap-nav-tree": "*",
+    "angular-file-upload": "~1.1.1",
+    "ngImgCrop": "~0.2.0"
   }
 }

@@ -1,3 +1,24 @@
+## Release v1.3.1:
+
+#### Features:
+
+  - Added mega menu
+  - Added tree view
+  - Added file upload
+  - Added image crop
+  - Added weather app
+  - Added tabs in vbox
+  - Added double click to create event on Fullcalendar
+  - Added background image on boxed layout.
+  - Added angularjs-stripped.html sample page.
+  - Changed lang file .json to .js
+
+#### Bugfixes:
+
+  - Fix fullscreen button stats
+  - Fix fullscreen on ie11(disabled)
+
+
 ## Release v1.3.0:
 
 #### Features:

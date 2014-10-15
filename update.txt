@@ -2,30 +2,6 @@
 
 #### Features:
 
- - (none)
-
-#### Bugfixes:
-
- - (none)
-
-
-
-## Release v1.3.0:
-
-#### Features:
-
- - (none)
-
-#### Bugfixes:
-
- - (none)
-
-
-
-## Release v1.3.1:
-
-#### Features:
-
   - Added mega menu
   - Added tree view
   - Added file upload

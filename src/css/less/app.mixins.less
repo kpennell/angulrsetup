@@ -26,8 +26,11 @@
   background-color: saturate(darken(@bg-color, @percent), @sat-percent);
 }
 
-.font-variant(@bg-color, @font-color, @link-color: #fff, @hover-color: #fff){
-	color: @font-color;
+.font-variant(@bg-color){
+	@font-color:  desaturate(lighten(@bg-color,40%), 10%);
+  @link-color:  desaturate(lighten(@bg-color,50%), 10%);
+  @hover-color: #fff;
+  color: @font-color;
 	a {
 		color: @link-color;
 		&:hover{

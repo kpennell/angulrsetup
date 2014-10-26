@@ -4,7 +4,7 @@ module.exports = {
           expand: true,
           cwd: 'src/tpl/',
           src: ['*.html', '**/*.html'],
-          dest: 'demo/tpl/',
+          dest: 'dist/tpl/',
           ext: '.html',
           extDot: 'first'
       }]

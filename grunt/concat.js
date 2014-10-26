@@ -1,7 +1,15 @@
 module.exports = {
-	dev:{
-    files: {
-      'src/js/angular/angular-translate.js': ['src/js/angular/angular-translate/*.js']
-    }
+  dist:{
+    src:[
+      'src/vendor/jquery/jquery.min.js',
+      'src/vendor/angular/angular.js',
+      'src/vendor/angular/**/*.js',
+      'src/js/*.js',
+      'src/js/directives/*.js',
+      'src/js/services/*.js',
+      'src/js/filters/*.js',
+      'src/js/controllers/bootstrap.js'
+    ],
+    dest:'dist/js/dist.js'
   }
 }

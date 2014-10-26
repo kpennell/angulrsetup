@@ -684,36 +684,6 @@
 
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Angular Select2</label>
-          <div class="col-sm-10">
-            <div ui-module="select2">
-              <select ui-select2 ng-model="select1" class="form-control w-md">
-                <option value="one">First</option>
-                <option value="two">Second</option>
-                <option value="three">Third</option>
-              </select>
-            </div>
-            <div class="line"></div>
-            <div ui-module="select2">
-              <select ui-select2="{allowClear: true}" ng-model="select2" data-placeholder="Pick a number" class="form-control input-sm w-md">
-                <option value=""></option>
-                <option ng-repeat="number in select2Number" value="{{number.value}}">{{number.text}}</option>
-              </select>
-            </div>
-            <div class="line"></div>
-            <div ui-module="select2">
-              <input
-                type="hidden"
-                ui-select2="select2Options"
-                ng-model="list_of_string"
-                class="form-control w-md"
-                >
-            </div>
-
-          </div>
-        </div>
-        <div class="line line-dashed b-b line-lg pull-in"></div>
-        <div class="form-group">
           <label class="col-sm-2 control-label">Datepicker</label>
           <div class="col-sm-10" ng-controller="DatepickerDemoCtrl">
             <div class="input-group w-md">

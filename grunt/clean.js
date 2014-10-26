@@ -1,5 +1,12 @@
 module.exports = {
-	src: ['src/js/libs/**/*.js', '!src/js/libs/.gitignore'],
-  demo: ['demo/*'],
-  cleans:['demo/css/**', 'demo/js/*.js', 'demo/js/angular/', 'demo/js/libs/angular/']
+  dist: ['dist/*'],
+  dists:[
+    'dist/css/**', 
+    'dist/js/*.js', 
+    'dist/vendor/angular/', 
+    'dist/js/directives', 
+    'dist/js/services', 
+    'dist/js/filters', 
+    'dist/index.min.html'
+  ]
 };

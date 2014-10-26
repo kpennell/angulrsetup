@@ -197,6 +197,10 @@ a:hover .caret-white {
   border-color: #23b7e5;
 }
 
+.form-horizontal .control-label.text-left {
+  text-align: left;
+}
+
 .form-control-spin {
   position: absolute;
   top: 50%;
@@ -2123,6 +2127,10 @@ fieldset[disabled] .btn-black.active {
   border-right: 1px solid #dee5e7;
 }
 
+.btn-groups .btn {
+  margin-bottom: 5px;
+}
+
 .list-icon i {
   display: inline-block;
   width: 40px;
@@ -2857,7 +2865,7 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-dark {
-  color: #9ea4b9;
+  color: #a6a8b1;
   background-color: #3a3f51;
 }
 
@@ -2887,7 +2895,7 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-dark a {
-  color: #bbc0cf;
+  color: #c1c3c9;
 }
 
 .bg-dark a:hover {
@@ -2907,7 +2915,7 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-dark .nav > li > a {
-  color: #adb2c4;
+  color: #b4b6bd;
 }
 
 .bg-dark .nav > li > a:hover,
@@ -2920,8 +2928,8 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-dark .caret {
-  border-top-color: #9ea4b9;
-  border-bottom-color: #9ea4b9;
+  border-top-color: #a6a8b1;
+  border-bottom-color: #a6a8b1;
 }
 
 .bg-dark.navbar .nav > li.active > a {
@@ -2936,11 +2944,11 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-dark .text-muted {
-  color: #8088a4 !important;
+  color: #8b8e99 !important;
 }
 
 .bg-dark .text-lt {
-  color: #e8e9ef !important;
+  color: #eaebed !important;
 }
 
 .bg-dark.auto .list-group-item,
@@ -2961,7 +2969,7 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-black {
-  color: #6b94b3;
+  color: #7793a7;
   background-color: #1c2b36;
 }
 
@@ -2991,7 +2999,7 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-black a {
-  color: #8dadc4;
+  color: #96abbb;
 }
 
 .bg-black a:hover {
@@ -3011,7 +3019,7 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-black .nav > li > a {
-  color: #7ca1bb;
+  color: #869fb1;
 }
 
 .bg-black .nav > li > a:hover,
@@ -3024,8 +3032,8 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-black .caret {
-  border-top-color: #6b94b3;
-  border-bottom-color: #6b94b3;
+  border-top-color: #7793a7;
+  border-bottom-color: #7793a7;
 }
 
 .bg-black.navbar .nav > li.active > a {
@@ -3040,11 +3048,11 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-black .text-muted {
-  color: #507b9b !important;
+  color: #5c798f !important;
 }
 
 .bg-black .text-lt {
-  color: #bfd1de !important;
+  color: #c4d0d9 !important;
 }
 
 .bg-black.auto .list-group-item,
@@ -3144,7 +3152,7 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-primary .text-muted {
-  color: #d3cfea !important;
+  color: #d6d3e6 !important;
 }
 
 .bg-primary .text-lt {
@@ -3169,7 +3177,7 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-success {
-  color: #c2f3ce;
+  color: #c6efd0;
   background-color: #27c24c;
 }
 
@@ -3199,7 +3207,7 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-success a {
-  color: #edfbf0;
+  color: #eefaf1;
 }
 
 .bg-success a:hover {
@@ -3219,7 +3227,7 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-success .nav > li > a {
-  color: #d7f7df;
+  color: #daf5e0;
 }
 
 .bg-success .nav > li > a:hover,
@@ -3232,8 +3240,8 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-success .caret {
-  border-top-color: #c2f3ce;
-  border-bottom-color: #c2f3ce;
+  border-top-color: #c6efd0;
+  border-bottom-color: #c6efd0;
 }
 
 .bg-success.navbar .nav > li.active > a {
@@ -3248,7 +3256,7 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-success .text-muted {
-  color: #98eaab !important;
+  color: #9ee4af !important;
 }
 
 .bg-success .text-lt {
@@ -3273,7 +3281,7 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-info {
-  color: #d9f3fb;
+  color: #dcf2f8;
   background-color: #23b7e5;
 }
 
@@ -3336,8 +3344,8 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-info .caret {
-  border-top-color: #d9f3fb;
-  border-bottom-color: #d9f3fb;
+  border-top-color: #dcf2f8;
+  border-bottom-color: #dcf2f8;
 }
 
 .bg-info.navbar .nav > li.active > a {
@@ -3352,7 +3360,7 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-info .text-muted {
-  color: #ace4f5 !important;
+  color: #b0e1f1 !important;
 }
 
 .bg-info .text-lt {
@@ -3456,7 +3464,7 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-warning .text-muted {
-  color: #fef4c8 !important;
+  color: #fbf2cb !important;
 }
 
 .bg-warning .text-lt {

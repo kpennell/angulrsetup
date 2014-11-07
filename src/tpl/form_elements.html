@@ -469,8 +469,8 @@
           <label class="col-sm-2 control-label">With dropdowns</label>
           <div class="col-sm-10">
             <div class="input-group m-b">
-              <div class="input-group-btn dropdown">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+              <div class="input-group-btn dropdown" dropdown>
+                <button type="button" class="btn btn-default" dropdown-toggle>Action <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   <li><a href>Action</a></li>
                   <li><a href>Another action</a></li>
@@ -483,8 +483,8 @@
             </div>
             <div class="input-group">
               <input type="text" class="form-control">
-              <div class="input-group-btn dropdown">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+              <div class="input-group-btn dropdown" dropdown>
+                <button type="button" class="btn btn-default" dropdown-toggle>Action <span class="caret"></span></button>
                 <ul class="dropdown-menu pull-right">
                   <li><a href>Action</a></li>
                   <li><a href>Another action</a></li>
@@ -501,9 +501,9 @@
           <label class="col-sm-2 control-label">Segmented</label>
           <div class="col-sm-10">
             <div class="input-group m-b">
-              <div class="input-group-btn dropdown">
+              <div class="input-group-btn dropdown" dropdown>
                 <button type="button" class="btn btn-default" tabindex="-1">Action</button>
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <button type="button" class="btn btn-default" dropdown-toggle><span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   <li><a href>Action</a></li>
                   <li><a href>Another action</a></li>
@@ -516,9 +516,9 @@
             </div>
             <div class="input-group">
               <input type="text" class="form-control">
-              <div class="input-group-btn dropdown">
+              <div class="input-group-btn dropdown" dropdown>
                 <button type="button" class="btn btn-default" tabindex="-1">Action</button>
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <button type="button" class="btn btn-default" dropdown-toggle><span class="caret"></span></button>
                 <ul class="dropdown-menu pull-right">
                   <li><a href>Action</a></li>
                   <li><a href>Another action</a></li>
@@ -707,19 +707,19 @@
           <label class="col-sm-2 control-label">Wysiwyg</label>
           <div class="col-sm-10">
             <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar" data-target="#editor">
-              <div class="btn-group dropdown">
-                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" tooltip="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
+              <div class="btn-group dropdown" dropdown>
+                <a class="btn btn-default" dropdown-toggle tooltip="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href dropdown-toggle data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li> 
-                  <li><a href dropdown-toggle data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li>
-                  <li><a href dropdown-toggle data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li></ul>
+                  <li><a href data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li> 
+                  <li><a href data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li>
+                  <li><a href data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li></ul>
               </div>
-              <div class="btn-group dropdown">
-                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" tooltip="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+              <div class="btn-group dropdown" dropdown>
+                <a class="btn btn-default" dropdown-toggle data-toggle="dropdown" tooltip="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href dropdown-toggle data-edit="fontSize 5" style="font-size:24px">Huge</a></li>
-                  <li><a href dropdown-toggle data-edit="fontSize 3" style="font-size:18px">Normal</a></li>
-                  <li><a href dropdown-toggle data-edit="fontSize 1" style="font-size:14px">Small</a></li>
+                  <li><a href data-edit="fontSize 5" style="font-size:24px">Huge</a></li>
+                  <li><a href data-edit="fontSize 3" style="font-size:18px">Normal</a></li>
+                  <li><a href data-edit="fontSize 1" style="font-size:14px">Small</a></li>
                 </ul>
               </div>
               <div class="btn-group">
@@ -740,11 +740,11 @@
                 <a class="btn btn-default" data-edit="justifyright" tooltip="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
                 <a class="btn btn-default" data-edit="justifyfull" tooltip="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
               </div>
-              <div class="btn-group dropdown">
-                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" tooltip="Hyperlink"><i class="fa fa-link"></i></a>
+              <div class="btn-group dropdown" dropdown>
+                <a class="btn btn-default" dropdown-toggle tooltip="Hyperlink"><i class="fa fa-link"></i></a>
                 <div class="dropdown-menu">
                   <div class="input-group m-l-xs m-r-xs">
-                    <input class="form-control input-sm" onclick="return false;" placeholder="URL" type="text" data-edit="createLink"/>
+                    <input class="form-control input-sm" id="LinkInput" placeholder="URL" type="text" data-edit="createLink"/>
                     <div class="input-group-btn">
                       <button class="btn btn-sm btn-default" type="button">Add</button>
                     </div>

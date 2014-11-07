@@ -32,5 +32,9 @@ app.controller('FormDemoCtrl', ['$scope', function($scope) {
         'tags': ['tag1', 'tag2', 'tag3', 'tag4']  // Can be empty list.
     };
 
+    angular.element("#LinkInput").bind('click', function (event) {
+      event.stopPropagation();
+    });
+
   }])
  ;

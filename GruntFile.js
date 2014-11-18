@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     gtx.alias('build:dev',  ['recess:app', 'copy:dev']);
     gtx.alias('build:dist', ['clean:dist', 'copy:dist', 'clean:dists', 'recess:min', 'concat:dist', 'uglify:dist']);
 
-    gtx.alias('release', ['bower-install-simple', 'build:dev', 'changelog:release', 'bump-commit']);
+    gtx.alias('release', ['bower-install-simple', 'build:dev', 'bump-commit']);
     gtx.alias('release-patch', ['bump-only:patch', 'release']);
     gtx.alias('release-minor', ['bump-only:minor', 'release']);
     gtx.alias('release-major', ['bump-only:major', 'release']);

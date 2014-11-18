@@ -20,7 +20,7 @@ html{
 		&.app-aside-folded{
 			.app-aside{
 				overflow-x: visible;
-			}
+			}			
 		}
 		&.app-aside-fixed{
 			.aside-wrap{
@@ -39,6 +39,22 @@ html{
 		.app-aside{
 			max-width: 750px;
 		}
+		.app-footer-fixed{
+			left: auto;
+			right: auto;
+			width: 100%;
+			max-width: 750 - @app-aside-width;
+		}
+		&.app-aside-folded{
+			.app-footer-fixed{
+				max-width: 750 - @app-aside-folded-width;
+			}
+		}
+		&.app-aside-dock{
+			.app-footer-fixed{
+				max-width: 750px;
+			}
+		}
 	}
 }
 
@@ -49,6 +65,19 @@ html{
 		.app-aside{
 			max-width: 970px;
 		}
+		.app-footer-fixed{
+			max-width: 970 - @app-aside-width;
+		}
+		&.app-aside-folded{
+			.app-footer-fixed{
+				max-width: 970 - @app-aside-folded-width;
+			}
+		}
+		&.app-aside-dock{
+			.app-footer-fixed{
+				max-width: 970px;
+			}
+		}
 	}
 }
 
@@ -58,6 +87,19 @@ html{
 		.app-header,
 		.app-aside{
 			max-width: 1170px;
+		}
+		.app-footer-fixed{
+			max-width: 1170 - @app-aside-width;
+		}
+		&.app-aside-folded{
+			.app-footer-fixed{
+				max-width: 1170 - @app-aside-folded-width;
+			}
+		}
+		&.app-aside-dock{
+			.app-footer-fixed{
+				max-width: 1170px;
+			}
 		}
 	}
 }

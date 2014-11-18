@@ -49,7 +49,9 @@ module.exports = {
 
             {src: "bower_components/ngImgCrop/compile/minified/ng-img-crop.js", dest: "src/vendor/modules/ngImgCrop/ng-img-crop.js"},
             {src: "bower_components/ngImgCrop/compile/minified/ng-img-crop.css", dest: "src/vendor/modules/ngImgCrop/ng-img-crop.css"},
-
+            
+            // {src: "bower_components/angular-ui-calendar/src/calendar.js", dest: "src/vendor/modules/angular-ui-calendar/calendar.js"},
+            
             {src: "bower_components/angular-ui-map/ui-map.js", dest: "src/vendor/modules/angular-ui-map/ui-map.js"},
 
             {src: "bower_components/angularjs-toaster/toaster.js", dest: "src/vendor/modules/angularjs-toaster/toaster.js"},
@@ -57,6 +59,14 @@ module.exports = {
 
             {src: "bower_components/ng-grid/build/ng-grid.min.js", dest: "src/vendor/modules/ng-grid/ng-grid.min.js"},
             {src: "bower_components/ng-grid/ng-grid.min.css", dest: "src/vendor/modules/ng-grid/ng-grid.min.css"},
+
+            {src: "bower_components/videogular/videogular.min.js", dest: "src/vendor/modules/videogular/videogular.min.js"},
+            {src: "bower_components/videogular-controls/controls.min.js", dest: "src/vendor/modules/videogular/plugins/controls.min.js"},
+            {src: "bower_components/videogular-buffering/buffering.min.js", dest: "src/vendor/modules/videogular/plugins/buffering.min.js"},
+            {src: "bower_components/videogular-overlay-play/overlay-play.min.js", dest: "src/vendor/modules/videogular/plugins/overlay-play.min.js"},
+            {src: "bower_components/videogular-poster/poster.min.js", dest: "src/vendor/modules/videogular/plugins/poster.min.js"},
+            {src: "bower_components/videogular-ima-ads/ima-ads.min.js", dest: "src/vendor/modules/videogular/plugins/ima-ads.min.js"},
+
 
         ]
     },

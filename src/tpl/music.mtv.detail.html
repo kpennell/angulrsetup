@@ -1,16 +1,34 @@
-<div class="bg-light lter b-b wrapper-md">
-  <h1 class="m-n font-thin h3">Post</h1>
-</div>
-<div class="wrapper-md">
+<div class="wrapper-lg">
   <div class="row">
     <div class="col-sm-9">
       <div class="blog-post">                   
-        <div class="panel">
+        <div class="panel no-border">
           <div>
-            <img src="img/c0.jpg" class="img-full">
+            <videogular vg-theme="config.theme.url">
+              <vg-video vg-src="video.sources">
+              </vg-video>
+
+              <vg-controls vg-autohide="video.plugins.controls.autoHide" vg-autohide-time="video.plugins.controls.autoHideTime">
+                <vg-play-pause-button></vg-play-pause-button>
+                <vg-timedisplay>{{ currentTime | date:'mm:ss' }}</vg-timedisplay>
+                <vg-scrubBar>
+                  <vg-scrubbarcurrenttime class="bg-info"></vg-scrubbarcurrenttime>
+                </vg-scrubBar>
+                <vg-timedisplay>{{ timeLeft | date:'mm:ss' }}</vg-timedisplay>
+                <vg-timedisplay>{{ totalTime | date:'mm:ss' }}</vg-timedisplay>
+                <vg-volume>
+                  <vg-mutebutton></vg-mutebutton>
+                  <vg-volumebar></vg-volumebar>
+                </vg-volume>
+                <vg-fullscreenButton></vg-fullscreenButton>
+              </vg-controls>
+              <vg-overlay-play></vg-overlay-play>
+              <vg-poster-image vg-url='video.plugins.poster'></vg-poster-image>
+              <vg-buffering></vg-buffering>
+            </videogular>
           </div>
           <div class="wrapper-lg">
-            <h2 class="m-t-none"><a href>7 things you need to know about the flat design</a></h2>
+            <h2 class="m-t-none"><a href>Big Buck Bunny Trailer</a></h2>
             <div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat. 
               <br><br>
@@ -24,36 +42,8 @@
             </div>
           </div>
         </div>
-        <div class="panel">
-          <div class="wrapper-lg">
-            <h2 class="m-t-none"><a href>Bootstrap 3: What you need to know</a></h2>
-            <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat. 
-              </p>
-              <h3>Html5 and CSS3</h3>
-              <p>
-              Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis, lectus arcu malesuada sem, dapibus porta quam lacus eu neque.</p>
-            </div>
-            <div class="line line-lg b-b b-light"></div>
-            <div class="text-muted">
-              <i class="fa fa-user text-muted"></i> by <a href class="m-r-sm">Admin</a>
-              <i class="fa fa-clock-o text-muted"></i> Feb 15, 2013
-              <a href class="m-l-sm"><i class="fa fa-comment-o text-muted"></i> 4 comments</a>
-            </div>
-          </div>
-        </div>
       </div>
-      <div class="text-center m-t-lg m-b-lg">
-        <ul class="pagination pagination-md">
-          <li><a href><i class="fa fa-chevron-left"></i></a></li>
-          <li class="active"><a href>1</a></li>
-          <li><a href>2</a></li>
-          <li><a href>3</a></li>
-          <li><a href>4</a></li>
-          <li><a href>5</a></li>
-          <li><a href><i class="fa fa-chevron-right"></i></a></li>
-        </ul>
-      </div>
+
       <h4 class="m-t-lg m-b">3 Comments</h4>
       <div>
         <div>
@@ -131,36 +121,6 @@
       </form>
     </div>
     <div class="col-sm-3">
-      <h5 class="font-bold">Categories</h5>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <a href>
-            <span class="badge pull-right">15</span>
-            Photograph
-          </a>
-        </li>
-        <li class="list-group-item">
-          <a href>
-            <span class="badge pull-right">30</span>
-            Life style
-          </a>
-        </li>
-        <li class="list-group-item">
-          <a href>
-            <span class="badge pull-right">9</span>
-            Food
-          </a>
-        </li>
-        <li class="list-group-item">
-          <a href>
-            <span class="badge pull-right">4</span>
-            Travel world
-          </a>
-        </li>
-      </ul>
-      <div class="tags m-b-lg l-h-2x">
-        <a href class="label bg-primary">Bootstrap</a> <a href class="label bg-primary">Application</a> <a href class="label bg-primary">Apple</a> <a href class="label bg-primary">Less</a> <a href class="label bg-primary">Theme</a> <a href class="label bg-primary">Wordpress</a>
-      </div>
       <h5 class="font-bold">Recent Posts</h5>
       <div>
         <div>

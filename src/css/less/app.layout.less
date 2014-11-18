@@ -54,6 +54,20 @@ body{
 	}
 }
 
+.app-aside-footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	z-index: 1000;
+	max-width: @app-aside-width;
+	.app-aside-folded & {
+		max-width: @app-aside-folded-width;
+	}
+	~ div{
+		padding-bottom: 50px;
+	}
+}
+
 .app-aside-right{
 	padding-bottom: @app-header-height;
 }
@@ -92,6 +106,9 @@ body{
 	left: 0;
 	right: 0;
 	z-index: 1005;
+	&.app-footer-fixed{
+		position: fixed;
+	}
 }
 
 .hbox{

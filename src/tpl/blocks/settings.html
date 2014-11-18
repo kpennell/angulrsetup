@@ -62,6 +62,22 @@
         </label>
 
         <label class="i-checks block m-b" ng-click="
+          app.settings.navbarHeaderColor='bg-dark'; 
+          app.settings.navbarCollapseColor='bg-white-only'; 
+          app.settings.asideColor='bg-dark';
+         ">
+          <input type="radio" name="a" ng-model="app.settings.themeID" value="13">
+          <span class="block bg-light clearfix pos-rlt">
+            <span class="active pos-abt w-full h-full bg-black-opacity text-center">
+              <i class="glyphicon glyphicon-ok text-white m-t-xs"></i>
+            </span>
+            <b class="bg-dark header"></b>
+            <b class="bg-white header"></b>
+            <b class="bg-dark"></b>
+          </span>
+        </label>
+
+        <label class="i-checks block m-b" ng-click="
           app.settings.navbarHeaderColor='bg-white-only'; 
           app.settings.navbarCollapseColor='bg-white-only'; 
           app.settings.asideColor='bg-black';
@@ -143,8 +159,8 @@
       </div>
       <div class="col-xs-6">
         <label class="i-checks block m-b" ng-click="
-          app.settings.navbarHeaderColor='bg-primary'; 
-          app.settings.navbarCollapseColor='bg-primary'; 
+          app.settings.navbarHeaderColor='bg-black'; 
+          app.settings.navbarCollapseColor='bg-black'; 
           app.settings.asideColor='bg-white b-r';
          ">
           <input type="radio" ng-model="app.settings.themeID" value="7">
@@ -152,9 +168,25 @@
             <span class="active pos-abt w-full h-full bg-black-opacity text-center">
               <i class="glyphicon glyphicon-ok text-white m-t-xs"></i>
             </span>
-            <b class="bg-primary header"></b>
-            <b class="bg-primary header"></b>
+            <b class="bg-black header"></b>
+            <b class="bg-black header"></b>
             <b class="bg-white"></b>
+          </span>
+        </label>
+
+        <label class="i-checks block m-b" ng-click="
+          app.settings.navbarHeaderColor='bg-dark'; 
+          app.settings.navbarCollapseColor='bg-dark'; 
+          app.settings.asideColor='bg-light';
+         ">
+          <input type="radio" name="a" ng-model="app.settings.themeID" value="14">
+          <span class="block bg-light clearfix pos-rlt">
+            <span class="active pos-abt w-full h-full bg-black-opacity text-center">
+              <i class="glyphicon glyphicon-ok text-white m-t-xs"></i>
+            </span>
+            <b class="bg-dark header"></b>
+            <b class="bg-dark header"></b>
+            <b class="bg-light"></b>
           </span>
         </label>
 

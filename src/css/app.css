@@ -714,6 +714,22 @@ body {
   content: "";
 }
 
+.app-aside-footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 1000;
+  width: 100%;
+  max-width: 200px;
+}
+
+.app-aside-folded .app-aside-footer {
+  max-width: 60px;
+}
+
+.app-aside-footer ~ div {
+  padding-bottom: 50px;
+}
+
 .app-aside-right {
   padding-bottom: 50px;
 }
@@ -760,6 +776,10 @@ body {
   bottom: 0;
   left: 0;
   z-index: 1005;
+}
+
+.app-footer.app-footer-fixed {
+  position: fixed;
 }
 
 .hbox {
@@ -1090,6 +1110,18 @@ html {
   .app.container .app-aside {
     max-width: 750px;
   }
+  .app.container .app-footer-fixed {
+    right: auto;
+    left: auto;
+    width: 100%;
+    max-width: 550px;
+  }
+  .app.container.app-aside-folded .app-footer-fixed {
+    max-width: 690px;
+  }
+  .app.container.app-aside-dock .app-footer-fixed {
+    max-width: 750px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -1100,6 +1132,15 @@ html {
   .app.container .app-aside {
     max-width: 970px;
   }
+  .app.container .app-footer-fixed {
+    max-width: 770px;
+  }
+  .app.container.app-aside-folded .app-footer-fixed {
+    max-width: 910px;
+  }
+  .app.container.app-aside-dock .app-footer-fixed {
+    max-width: 970px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -1108,6 +1149,15 @@ html {
   }
   .app.container .app-header,
   .app.container .app-aside {
+    max-width: 1170px;
+  }
+  .app.container .app-footer-fixed {
+    max-width: 970px;
+  }
+  .app.container.app-aside-folded .app-footer-fixed {
+    max-width: 1110px;
+  }
+  .app.container.app-aside-dock .app-footer-fixed {
     max-width: 1170px;
   }
 }
@@ -1209,8 +1259,6 @@ html {
     font-size: 16px;
     line-height: 50px;
     border: none !important;
-    -webkit-transition: margin-top 0.2s;
-            transition: margin-top 0.2s;
   }
   .app-aside-folded .navi > ul > li > a i b {
     left: 0 !important;
@@ -1327,6 +1375,9 @@ html {
   .app-aside-dock .app-footer {
     margin-left: 0;
   }
+  .app-aside-dock .app-aside-footer ~ div {
+    padding-bottom: 0;
+  }
   .app-aside-dock.app-aside-fixed.app-header-fixed {
     padding-top: 115px;
   }
@@ -1354,6 +1405,9 @@ html {
   }
   .app-aside-dock .app-aside:before {
     display: none;
+  }
+  .app-aside-dock .app-aside nav > .nav {
+    float: left;
   }
   .app-aside-dock .app-aside .hidden-folded,
   .app-aside-dock .app-aside .line,
@@ -2826,14 +2880,6 @@ fieldset[disabled] .i-checks input + i:before {
   filter: none;
 }
 
-.bg-white-opacity {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.bg-black-opacity {
-  background-color: rgba(32, 43, 54, 0.5);
-}
-
 .bg-light {
   color: #58666e;
   background-color: #edf1f2;
@@ -3620,6 +3666,14 @@ fieldset[disabled] .i-checks input + i:before {
   background-color: #fff;
 }
 
+.bg-white-opacity {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bg-black-opacity {
+  background-color: rgba(32, 43, 54, 0.5);
+}
+
 a.bg-light:hover {
   color: #363f44;
 }
@@ -3842,6 +3896,10 @@ a.text-#000000:hover {
 
 .pos-fix {
   position: fixed;
+}
+
+.show {
+  visibility: visible;
 }
 
 .line {

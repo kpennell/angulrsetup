@@ -486,6 +486,49 @@ angular.module('app')
                       }]
                   }
               })
+              .state('music', {
+                  url: '/music',
+                  templateUrl: 'tpl/music.html',
+                  controller: 'MusicCtrl',
+                  resolve: {
+                      deps: ['$ocLazyLoad',
+                        function( $ocLazyLoad ){
+                          return $ocLazyLoad.load([
+                            'com.2fdevs.videogular', 
+                            'com.2fdevs.videogular.plugins.controls', 
+                            'com.2fdevs.videogular.plugins.overlayplay',
+                            'com.2fdevs.videogular.plugins.poster',
+                            'com.2fdevs.videogular.plugins.buffering',
+                            'js/app/music/ctrl.js', 
+                            'js/app/music/theme.css'
+                          ]);
+                      }]
+                  }
+              })
+                .state('music.home', {
+                    url: '/home',
+                    templateUrl: 'tpl/music.home.html'
+                })
+                .state('music.genres', {
+                    url: '/genres',
+                    templateUrl: 'tpl/music.genres.html'
+                })
+                .state('music.detail', {
+                    url: '/detail',
+                    templateUrl: 'tpl/music.detail.html'
+                })
+                .state('music.mtv', {
+                    url: '/mtv',
+                    templateUrl: 'tpl/music.mtv.html'
+                })
+                .state('music.mtvdetail', {
+                    url: '/mtvdetail',
+                    templateUrl: 'tpl/music.mtv.detail.html'
+                })
+                .state('music.playlist', {
+                    url: '/playlist/{fold}',
+                    templateUrl: 'tpl/music.playlist.html'
+                })
       }
     ]
   );

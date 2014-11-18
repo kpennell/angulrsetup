@@ -84,6 +84,7 @@
 	top: auto;
 	left: 50%;
 	margin-left: -150px;
+  z-index: 1000;
 }
 
 .fc-overlay.left{
@@ -117,4 +118,12 @@
 .fc-event:focus .fc-overlay,
 .fc-event:active .fc-overlay{
 	display: block;
+}
+
+.fc-time-grid-event{
+  overflow: visible;
+}
+
+.fc-time-grid .fc-event:hover{
+  z-index: 1000 !important;
 }

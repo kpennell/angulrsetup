@@ -183,15 +183,28 @@
           <span>Toaster</span>
         </a>
       </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.ui.jvectormap">
-          <span translate="aside.nav.components.ui_kits.VECTOR_MAP">Vector Map</span>
+      <li>
+        <a href class="auto">
+          <span class="pull-right text-muted">
+            <i class="fa fa-fw fa-angle-right text"></i>
+            <i class="fa fa-fw fa-angle-down text-active"></i>
+          </span>
+          <b class="label bg-info pull-right">2</b>
+          <span>Maps</span>
         </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.ui.googlemap">
-          <span>Google Map</span>
-        </a>
+        <ul class="nav dker">
+          <li ui-sref-active="active">
+            <a ui-sref="app.ui.jvectormap">
+              <span translate="aside.nav.components.ui_kits.VECTOR_MAP">Vector Map</span>
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="app.ui.googlemap">
+              <span>Google Map</span>
+            </a>
+          </li>
+          </li>
+        </ul>
       </li>
     </ul>
   </li>
@@ -229,6 +242,16 @@
       <li ui-sref-active="active">
         <a ui-sref="app.table.grid">
           <span>ngGrid</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.table.uigrid">
+          <span>uiGrid</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.table.editable">
+          <span>Editable</span>
         </a>
       </li>
     </ul>
@@ -286,6 +309,11 @@
       <li ui-sref-active="active">
         <a ui-sref="app.form.editor">
           <span>Editor</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.xeditable">
+          <span>Xeditable</span>
         </a>
       </li>
     </ul>

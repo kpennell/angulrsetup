@@ -54,12 +54,15 @@ module.exports = {
             
             {src: "bower_components/angular-ui-map/ui-map.js", dest: "src/vendor/modules/angular-ui-map/ui-map.js"},
 
+            // toaster
             {src: "bower_components/angularjs-toaster/toaster.js", dest: "src/vendor/modules/angularjs-toaster/toaster.js"},
             {src: "bower_components/angularjs-toaster/toaster.css", dest: "src/vendor/modules/angularjs-toaster/toaster.css"},
 
+            // ng-grid
             {src: "bower_components/ng-grid/build/ng-grid.min.js", dest: "src/vendor/modules/ng-grid/ng-grid.min.js"},
             {src: "bower_components/ng-grid/ng-grid.min.css", dest: "src/vendor/modules/ng-grid/ng-grid.min.css"},
 
+            // videogular
             {src: "bower_components/videogular/videogular.min.js", dest: "src/vendor/modules/videogular/videogular.min.js"},
             {src: "bower_components/videogular-controls/controls.min.js", dest: "src/vendor/modules/videogular/plugins/controls.min.js"},
             {src: "bower_components/videogular-buffering/buffering.min.js", dest: "src/vendor/modules/videogular/plugins/buffering.min.js"},
@@ -67,13 +70,36 @@ module.exports = {
             {src: "bower_components/videogular-poster/poster.min.js", dest: "src/vendor/modules/videogular/plugins/poster.min.js"},
             {src: "bower_components/videogular-ima-ads/ima-ads.min.js", dest: "src/vendor/modules/videogular/plugins/ima-ads.min.js"},
 
+            // ui-grid
+            {expand: true, dest: 'src/vendor/modules/angular-ui-grid/', src:'ui-grid.*', cwd:'bower_components/angular-ui-grid/'},
+
+            // xeditable
+            {expand: true, dest: 'src/vendor/modules/angular-xeditable/', src:'**', cwd:'bower_components/angular-xeditable/dist/'},
 
         ]
     },
-    dist: {
+    angular: {
         files: [
-            {expand: true, dest: 'dist/', src:'**', cwd:'src/'},
-            {dest: 'dist/index.html', src:'src/index.min.html'}
+            {expand: true, dest: 'angular/', src:'**', cwd:'src/'},
+            {dest: 'angular/index.html', src:'src/index.min.html'}
+        ]
+    },
+    html: {
+        files: [
+            {expand: true, dest: 'html/fonts/', src:'**', cwd:'src/fonts/'},
+            {expand: true, dest: 'html/img/', src:'**', cwd:'src/img/'},
+            {expand: true, dest: 'html/css/', src:'**', cwd:'src/css/'},
+            {expand: true, dest: 'html/js/', src:'**', cwd:'src/vendor/jquery/'}
+        ]
+    },
+    landing: {
+        files: [
+            {expand: true, dest: 'landing/fonts/', src:'**',    cwd:'src/fonts/'},
+            {expand: true, dest: 'landing/css/',   src:'*.css', cwd:'src/css/'},
+            {dest: 'landing/css/app.min.css',  src:'html/css/app.min.css'},
+            {dest: 'landing/js/jquery.min.js', src:'html/js/jquery.min.js'},
+            {dest: 'landing/js/bootstrap.js',  src:'html/js/bootstrap.js'}
         ]
     }
+
 };

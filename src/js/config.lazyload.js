@@ -43,7 +43,7 @@ angular.module('app')
   .config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {
       // We configure ocLazyLoad to use the lib script.js as the async loader
       $ocLazyLoadProvider.config({
-          debug:  false,
+          debug:  true,
           events: true,
           modules: [
               {
@@ -52,6 +52,13 @@ angular.module('app')
                       'vendor/modules/ng-grid/ng-grid.min.js',
                       'vendor/modules/ng-grid/ng-grid.min.css',
                       'vendor/modules/ng-grid/theme.css'
+                  ]
+              },
+              {
+                  name: 'ui.grid',
+                  files: [
+                      'vendor/modules/angular-ui-grid/ui-grid.min.js',
+                      'vendor/modules/angular-ui-grid/ui-grid.min.css'
                   ]
               },
               {
@@ -140,6 +147,13 @@ angular.module('app')
                   name: 'com.2fdevs.videogular.plugins.imaads',
                   files: [
                       'vendor/modules/videogular/plugins/ima-ads.min.js'
+                  ]
+              },
+              {
+                  name: 'xeditable',
+                  files: [
+                      'vendor/modules/angular-xeditable/js/xeditable.min.js',
+                      'vendor/modules/angular-xeditable/css/xeditable.css'
                   ]
               }
           ]

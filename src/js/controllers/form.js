@@ -35,6 +35,4 @@ app.controller('FormDemoCtrl', ['$scope', function($scope) {
     angular.element("#LinkInput").bind('click', function (event) {
       event.stopPropagation();
     });
-
-  }])
- ;
+}]);

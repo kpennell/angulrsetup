@@ -20,7 +20,7 @@ app
     $scope.d2 = [];
 
     for (var i = 0; i < 20; ++i) {
-      $scope.d2.push([i, Math.sin(i)]);
+      $scope.d2.push([i, Math.round( Math.sin(i)*100)/100] );
     }   
 
     $scope.d3 = [ 
@@ -48,7 +48,7 @@ app
         } else if (y > 100) {
           y = 100;
         }
-        data.push(y);
+        data.push(Math.round(y*100)/100);
       }
       // Zip the generated y values with the x values
       var res = [];

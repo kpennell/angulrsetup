@@ -1,6 +1,6 @@
 /**
  * oclazyload - Load modules on demand (lazy load) with angularJS
- * @version v0.5.0
+ * @version v0.5.1
  * @link https://github.com/ocombe/ocLazyLoad
  * @license MIT
  * @author Olivier Combe <olivier.combe@gmail.com>
@@ -34,7 +34,7 @@
       // Let's get the list of loaded modules & components
       init(angular.element(window.document));
 
-      this.$get = ['$timeout', '$log', '$q', '$templateCache', '$http', '$rootElement', '$rootScope', '$cacheFactory', '$interval', function($timeout, $log, $q, $templateCache, $http, $rootElement, $rootScope, $cacheFactory, $interval) {
+      this.$get = ['$log', '$q', '$templateCache', '$http', '$rootElement', '$rootScope', '$cacheFactory', '$interval', function($log, $q, $templateCache, $http, $rootElement, $rootScope, $cacheFactory, $interval) {
         var instanceInjector,
           filesCache = $cacheFactory('ocLazyLoad'),
           uaCssChecked = false,
@@ -49,7 +49,7 @@
 
         // Make this lazy because at the moment that $get() is called the instance injector hasn't been assigned to the rootElement yet
         providers.getInstanceInjector = function() {
-          return (instanceInjector) ? instanceInjector : (instanceInjector = $rootElement.data('$injector'));
+          return (instanceInjector) ? instanceInjector : (instanceInjector = ($rootElement.data('$injector') || angular.injector()));
         };
 
         broadcast = function broadcast(eventName, params) {
@@ -115,15 +115,15 @@
           el.onerror = function(e) {
             deferred.reject(new Error('Unable to load ' + path));
           }
-          el.async = 1;
+          el.async = params.serie ? 0 : 1;
 
           var insertBeforeElem = anchor.lastChild;
-		  if(params.insertBefore) {
-		    var element = angular.element(params.insertBefore);
-		    if(element && element.length > 0) {
-			  insertBeforeElem = element[0];
-		    }
-		  }
+          if(params.insertBefore) {
+            var element = angular.element(params.insertBefore);
+            if(element && element.length > 0) {
+              insertBeforeElem = element[0];
+            }
+          }
           anchor.insertBefore(el, insertBeforeElem);
 
           /*
@@ -225,27 +225,24 @@
            * because the user can overwrite templatesLoader and it will probably not use promises :(
            */
           templatesLoader = function(paths, callback, params) {
-            if(angular.isString(paths)) {
-              paths = [paths];
-            }
             var promises = [];
             angular.forEach(paths, function(url) {
               var deferred = $q.defer();
               promises.push(deferred.promise);
               $http.get(url, params).success(function(data) {
-                angular.forEach(angular.element(data), function(node) {
-                  if(node.nodeName === 'SCRIPT' && node.type === 'text/ng-template') {
-                    $templateCache.put(node.id, node.innerHTML);
-                  }
-                });
+                if(angular.isString(data) && data.length > 0) {
+                  angular.forEach(angular.element(data), function(node) {
+                    if(node.nodeName === 'SCRIPT' && node.type === 'text/ng-template') {
+                      $templateCache.put(node.id, node.innerHTML);
+                    }
+                  });
+                }
                 if(angular.isUndefined(filesCache.get(url))) {
                   filesCache.put(url, true);
                 }
                 deferred.resolve();
-              }).error(function(data) {
-                var err = 'Error load template "' + url + '": ' + data;
-                $log.error(err);
-                deferred.reject(new Error(err));
+              }).error(function(err) {
+                deferred.reject(new Error('Unable to load template file "' + url + '": ' + err));
               });
             });
             return $q.all(promises).then(function success() {
@@ -592,13 +589,9 @@
                     deferred.reject(e);
                     return;
                   }
-                  $timeout(function() {
-                    deferred.resolve(module);
-                  });
+                  deferred.resolve(module);
                 }, function error(err) {
-                  $timeout(function() {
-                    deferred.reject(err);
-                  });
+                  deferred.reject(err);
                 });
               }
             }, function error(err) {
@@ -863,13 +856,10 @@
   }
 
   function getModuleName(module) {
-    if(module === null) {
-      return null;
-    }
     var moduleName = null;
-    if(typeof module === 'string') {
+    if(angular.isString(module)) {
       moduleName = module;
-    } else if(typeof module === 'object' && module.hasOwnProperty('name') && typeof module.name === 'string') {
+    } else if(angular.isObject(module) && module.hasOwnProperty('name') && angular.isString(module.name)) {
       moduleName = module.name;
     }
     return moduleName;

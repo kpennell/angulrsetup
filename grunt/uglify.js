@@ -1,8 +1,14 @@
 module.exports = {
-  dist:{
+  angular:{
     src:[
-      'dist/js/dist.js'
+      'angular/js/dist.js'
     ],
-    dest:'dist/js/app.min.js'
+    dest:'angular/js/app.min.js'
+  },
+  html:{
+    src:[
+      'html/js/app.js'
+    ],
+    dest:'html/js/app.min.js'
   }
 }

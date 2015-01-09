@@ -1,3 +1,21 @@
+## Release v2.0.0:
+
+#### Features:
+
+ - Added app landing page
+ - Added html version
+ - Added ui.utils(removed ui.validate)
+ - Added mask input
+ - Added multiple level nav
+ - Added ui-grid
+ - Added editable form
+ - Added editable table
+
+#### Bugfixes:
+
+ - Nav with bg-white
+
+
 ## Release v1.3.3:
 
 #### Features:

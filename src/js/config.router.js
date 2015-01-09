@@ -177,6 +177,35 @@ angular.module('app')
                       }]
                   }
               })
+              .state('app.table.uigrid', {
+                  url: '/uigrid',
+                  templateUrl: 'tpl/table_uigrid.html',
+                  resolve: {
+                      deps: ['$ocLazyLoad',
+                        function( $ocLazyLoad ){
+                          return $ocLazyLoad.load('ui.grid').then(
+                              function(){
+                                  return $ocLazyLoad.load('js/controllers/uigrid.js');
+                              }
+                          );
+                      }]
+                  }
+              })
+              .state('app.table.editable', {
+                  url: '/editable',
+                  templateUrl: 'tpl/table_editable.html',
+                  controller: 'XeditableCtrl',
+                  resolve: {
+                      deps: ['$ocLazyLoad',
+                        function( $ocLazyLoad ){
+                          return $ocLazyLoad.load('xeditable').then(
+                              function(){
+                                  return $ocLazyLoad.load('js/controllers/xeditable.js');
+                              }
+                          );
+                      }]
+                  }
+              })
               // form
               .state('app.form', {
                   url: '/form',
@@ -268,6 +297,21 @@ angular.module('app')
                           return $ocLazyLoad.load('textAngular').then(
                               function(){
                                   return $ocLazyLoad.load('js/controllers/editor.js');
+                              }
+                          );
+                      }]
+                  }
+              })
+              .state('app.form.xeditable', {
+                  url: '/xeditable',
+                  templateUrl: 'tpl/form_xeditable.html',
+                  controller: 'XeditableCtrl',
+                  resolve: {
+                      deps: ['$ocLazyLoad',
+                        function( $ocLazyLoad ){
+                          return $ocLazyLoad.load('xeditable').then(
+                              function(){
+                                  return $ocLazyLoad.load('js/controllers/xeditable.js');
                               }
                           );
                       }]

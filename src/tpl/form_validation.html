@@ -165,7 +165,7 @@
             <div class="panel-heading">
               <strong>Type constraints</strong>
             </div>
-            <div class="panel-body">                    
+            <div class="panel-body">                 
               <div class="form-group">
                 <label class="col-sm-3 control-label">Email</label>
                 <div class="col-sm-9">
@@ -237,6 +237,28 @@
             <footer class="panel-footer text-right bg-light lter">
               <button type="submit" class="btn btn-success">Submit</button>
             </footer>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <form name="formc" class="form-horizontal form-validation">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <strong>Mask Input</strong>
+            </div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Mask Input</label>
+                <div class="col-sm-9">
+                  <input type="text" name="masked" ui-mask="(999) 999-9999" ng-model="aa" placeholder="(999) 999-9999" class="form-control m-b" ng-model="g.k1" required>
+                  <input type="text" name="masked" ui-mask="(999) 999-9999 ext. 999" ng-model="bb" placeholder="(999) 999-9999 ext. 999" class="form-control m-b" ng-model="g.k2" required>
+                  <input type="text" name="masked" ui-mask="**:AAA-999" ng-model="cc" placeholder="**:AAA-999" class="form-control m-b" ng-model="g.k3" required>
+                  <p class="m-b"><code>A</code> Any letter.<br><code>9</code> Any number.<br><code>*</code> Any letter or number.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </form>
       </div>

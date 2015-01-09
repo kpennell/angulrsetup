@@ -11,7 +11,18 @@ module.exports = {
     },
     min: {
         files: {
-            'dist/css/app.min.css': [
+            'angular/css/app.min.css': [
+                'src/css/bootstrap.css',
+                'src/css/*.css'
+            ]
+        },
+        options: {
+            compress: true
+        }
+    },
+    html: {
+        files: {
+            'html/css/app.min.css': [
                 'src/css/bootstrap.css',
                 'src/css/*.css'
             ]

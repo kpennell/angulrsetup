@@ -29,7 +29,10 @@
     "app",
     "widgets"
   ],
-  "repository": "https://heyflat@bitbucket.org/heyflat/angulr.git",
+  "repository": {
+    "type": "git",
+    "url": "https://heyflat@bitbucket.org/heyflat/angulr.git"
+  },
   "author": "Flatfull",
   "license": "Envato REGULAR LICENSE",
   "dependencies": {},
@@ -48,5 +51,6 @@
     "gruntfile-gtx": "^0.3.0",
     "http-server": "^0.6.1",
     "require-directory": "^2.0.0"
-  }
+  },
+  "main": "GruntFile.js"
 }

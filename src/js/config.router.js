@@ -44,6 +44,26 @@ angular.module('app')
                     }]
                   }
               })
+              .state('app.vibes', {
+                  url: '/vibes',
+                  templateUrl: 'tpl/vibes.html',
+                  resolve: {
+                    deps: ['$ocLazyLoad',
+                      function( $ocLazyLoad ){
+                        return $ocLazyLoad.load(['js/controllers/chart.js']);
+                    }]
+                  }
+              })
+              .state('app.vibesample', {
+                  url: '/vibesample',
+                  templateUrl: 'tpl/vibesample.html',
+                  resolve: {
+                    deps: ['$ocLazyLoad',
+                      function( $ocLazyLoad ){
+                        return $ocLazyLoad.load(['js/controllers/chart.js']);
+                    }]
+                  }
+              })
               .state('app.ui', {
                   url: '/ui',
                   template: '<div ui-view class="fade-in-up"></div>'

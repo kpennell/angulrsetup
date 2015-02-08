@@ -914,7 +914,7 @@ body {
   .navbar-collapse,
   .app-content,
   .app-footer {
-    margin-left: 200px;
+    margin-left: 0px;
   }
   .app-aside-right {
     position: absolute;
@@ -951,7 +951,7 @@ body {
   .app-aside-folded .navbar-collapse,
   .app-aside-folded .app-content,
   .app-aside-folded .app-footer {
-    margin-left: 60px;
+    margin-left: 0px;
   }
   .app-aside-folded .app-header .navbar-brand {
     display: block;
@@ -1079,7 +1079,7 @@ body {
 }
 
 html {
-  background: url('../img/bg.jpg');
+  background: url('../img/sky.jpg');
   background-attachment: fixed;
   background-size: cover;
 }
